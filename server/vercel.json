@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "env": {
+    "MONDAY_SIGNING_SECRET": "@monday_signing_secret",
+    "PUBLIC_BASE_URL": "@public_base_url"
+  }
+}

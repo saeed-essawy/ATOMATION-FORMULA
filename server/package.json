@@ -1,0 +1,12 @@
+{
+  "name": "monday-formula-sync",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

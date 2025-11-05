@@ -1,0 +1,38 @@
+
+QUICKSTART (Hebrew + English)
+
+[HE]
+1) פריסה ל-Vercel:
+   - פתח vercel.com → New Project → Import את תיקיית server (מה-ZIP הזה).
+   - הגדר Environment Variables:
+       MONDAY_SIGNING_SECRET = (מה-Developer Center של האפליקציה)
+       PUBLIC_BASE_URL      = https://your-app.vercel.app  (אחרי הדיפלוי הראשון, עדכן לכתובת המדויקת)
+   - עשה Deploy.
+
+2) עדכון manifest:
+   - פתח את app_bundle/app.json והחלף את https://your-app.vercel.app לכתובת ה-Vercel שלך.
+   - דחוס את תיקיית app_bundle ל-ZIP (התוכן חייב לכלול app.json בשורש ה-ZIP).
+   - Developer Center → Distribute → App versions → Upload version (טעינת ה-ZIP).
+   - Install app → הפעל את ה-Recipe בלוח ובחר watch_cols / formula_col / text_col.
+
+3) אין צורך בטוקן אישי:
+   - האפליקציה משתמשת ב-shortLivedToken שמגיע מ-monday בפיילואד.
+   - כן צריך MONDAY_SIGNING_SECRET בלבד כדי לאמת חתימות.
+
+[EN]
+1) Deploy server to Vercel:
+   - Import `server` folder as a new Vercel project.
+   - Add env vars:
+       MONDAY_SIGNING_SECRET = (from your monday app → General settings)
+       PUBLIC_BASE_URL      = https://your-app.vercel.app  (update to real domain after first deploy)
+   - Deploy.
+
+2) Update manifest:
+   - Open `app_bundle/app.json` and replace the domain with your Vercel URL.
+   - Zip the `app_bundle` (make sure `app.json` is at the root of the ZIP).
+   - In Developer Center: Distribute → App versions → Upload version.
+   - Install the app and configure the recipe fields.
+
+3) No personal token needed:
+   - Uses shortLivedToken provided by monday in payload.
+   - Only MONDAY_SIGNING_SECRET is required in the server.

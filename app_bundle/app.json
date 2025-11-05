@@ -1,0 +1,52 @@
+{
+  "name": "Formula → Text Sync",
+  "features": {
+    "integration": {
+      "recipes": [
+        {
+          "name": "When {watch_cols} change, set {text_col} to the value of {formula_col}",
+          "integration": "formula_to_text",
+          "trigger": {
+            "type": "webhook",
+            "subscription_urls": {
+              "subscribe": "https://your-app.vercel.app/api/subscribe",
+              "unsubscribe": "https://your-app.vercel.app/api/unsubscribe",
+              "event": "https://your-app.vercel.app/api/event"
+            },
+            "input_fields": [
+              {
+                "id": "watch_cols",
+                "title": "Columns to watch",
+                "type": "column",
+                "multiple": true
+              }
+            ]
+          },
+          "action": {
+            "url": "https://your-app.vercel.app/api/execute",
+            "input_fields": [
+              {
+                "id": "formula_col",
+                "title": "Formula (source)",
+                "type": "column",
+                "allowed_column_types": [
+                  "formula"
+                ],
+                "required": true
+              },
+              {
+                "id": "text_col",
+                "title": "Text (target)",
+                "type": "column",
+                "allowed_column_types": [
+                  "text"
+                ],
+                "required": true
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
